@@ -1,0 +1,15 @@
+{
+    "name": "hexlet/code",
+    "description": "Difference calculator",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maksyliator",
+            "email": "tankov.m83@gmail.com"
+        }
+    ],
+    "require": {
+        "docopt/docopt": "^1.0"
+    }
+}
