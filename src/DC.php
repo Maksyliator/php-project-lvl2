@@ -22,7 +22,7 @@ function genDiff($file1, $file2)
             $result["- $key"] = $data1[$key];
             $result["+ $key"] = $data2[$key];
         } else {
-            $result["  $key"] = $data2[$key];;
+            $result["  $key"] = $data2[$key];
         }
     }
     return json_encode($result, JSON_THROW_ON_ERROR);
