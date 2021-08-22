@@ -1,14 +1,20 @@
 {
     "name": "hexlet/code",
-    "description": "Difference calculator",
+    "bin": ["bin/gendiff"],
     "type": "library",
-    "license": "MIT",
     "authors": [
         {
             "name": "Maksyliator",
             "email": "tankov.m83@gmail.com"
         }
     ],
+    "description": "Difference calculator",
+    "license": "MIT",
+    "autoload": {
+        "files" : [
+            "src/DC.php"
+        ]
+    },
     "require": {
         "docopt/docopt": "^1.0",
         "lstrojny/functional-php": "^1.17",
