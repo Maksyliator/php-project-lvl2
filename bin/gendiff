@@ -1,7 +1,9 @@
 #!/usr/bin/env php
 <?php
 
-require ('vendor/docopt/docopt/src/docopt.php');
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use gen\diff;
 
 $doc = <<<DOC
 Generate diff
@@ -18,5 +20,6 @@ Options:
 
 DOC;
 
-
 $args = Docopt::handle($doc, array('version' => 'Generate diff 1.0'));
+print_r(diff\genDiff($args['<firstFile>'], $args['<secondFile>']));
+
