@@ -1,5 +1,5 @@
 {
-    "name": "hexlet/code",
+    "name": "maksyliator/difcalc",
     "bin": ["bin/gendiff"],
     "type": "library",
     "authors": [
