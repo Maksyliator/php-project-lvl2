@@ -12,14 +12,14 @@ function genDiff($file1, $file2)
     $result = [];
     foreach ($keys as $key) {
         if (!array_key_exists($key, $data1)) {
-            $result['+ '.$key] = $data2[$key];
+            $result['+ ' . $key] = $data2[$key];
         } elseif (!array_key_exists($key, $data2)) {
-            $result['- '.$key] = $data1[$key];
+            $result['- ' . $key] = $data1[$key];
         } elseif ($data1[$key] !== $data2[$key]) {
-            $result['- '.$key] = $data1[$key];
-            $result['+ '.$key] = $data2[$key];
+            $result['- ' . $key] = $data1[$key];
+            $result['+ ' . $key] = $data2[$key];
         } else {
-            $result[' '.$key] = $data2[$key];
+            $result[' ' . $key] = $data2[$key];
         }
     }
     return json_encode($result, JSON_PRETTY_PRINT);
