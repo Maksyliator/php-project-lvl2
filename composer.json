@@ -10,6 +10,7 @@
     ],
     "description": "Difference calculator",
     "license": "MIT",
+    "version": "1.0.0",
     "autoload": {
         "files" : [
             "src/difference-calculator.php"
