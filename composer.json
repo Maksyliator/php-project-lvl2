@@ -12,7 +12,7 @@
     "license": "MIT",
     "autoload": {
         "files" : [
-            "src/DC.php"
+            "src/difference-calculator.php"
         ]
     },
     "require": {

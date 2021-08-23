@@ -1,6 +1,6 @@
 <?php
 
-namespace gen\diff;
+namespace difference\calculator;
 
 function genDiff($file1, $file2)
 {
