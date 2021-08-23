@@ -4,8 +4,8 @@ namespace difference\calculator;
 
 function genDiff($file1, $file2)
 {
-    $file1Contents = file_get_contents("./$file1", true);
-    $file2Contents = file_get_contents("./$file2", true);
+    $file1Contents = file_get_contents(__DIR__ . '/../' . $file1, true);
+    $file2Contents = file_get_contents(__DIR__ . '/../' . $file2, true);
     $data1 = json_decode($file1Contents, true);
     $data2 = json_decode($file2Contents, true);
     $keys = array_merge(array_keys($data1), array_keys($data2));
