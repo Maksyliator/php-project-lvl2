@@ -12,7 +12,8 @@
     "license": "MIT",
     "autoload": {
         "files" : [
-            "src/difference-calculator.php"
+            "src/difference-calculator.php",
+            "src/stylish.php"
             ],
         "psr-4": {
             "tests\\test\\": "tests"
