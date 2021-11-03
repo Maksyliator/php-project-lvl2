@@ -2,6 +2,8 @@
 
 namespace stylish;
 
+use phpDocumentor\Reflection\Types\Mixed_;
+
 function stylish(array $value): string
 {
     $space = ' ';
@@ -24,7 +26,7 @@ function stylish(array $value): string
     return $iter($value, 1);
 }
 
-function toString(string $value): string
+function toString($value): string
 {
     return trim(var_export($value, true), "'");
 }

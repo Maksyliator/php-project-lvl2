@@ -26,5 +26,6 @@ function genDiff(object $data1, object $data2): string
             }
         }
     }
+    var_dump($result);
     return stylish($result);
 }
