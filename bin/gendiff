@@ -41,9 +41,3 @@ if ($extensionSecondFile === 'json') {
 }
 
 print_r(genDiff($data1, $data2));
-
-
-
-
-
-
