@@ -2,16 +2,17 @@
 
 namespace difference\calculator;
 
-use function formatter\formatter;
+use function stylish\stylish;
 
-function genDiff($data1, $data2): string
+function genDiff(object $data1, object $data2): string
 {
+    $result = [];
     if (is_object($data1) & is_object(($data2))) {
-        $data1 = get_object_vars($data1);
-        $data2 = get_object_vars($data2);
+        $data1 = (array) $data1;
+        $data2 = (array) $data2;
         $keys = array_merge(array_keys($data1), array_keys($data2));
         sort($keys);
-        $result = [];
+        $keys = array_unique($keys);
         foreach ($keys as $key) {
             if (!array_key_exists($key, $data1)) {
                 $result['+ ' . $key] = $data2[$key];
@@ -25,5 +26,5 @@ function genDiff($data1, $data2): string
             }
         }
     }
-    return formatter($result);
+    return stylish($result);
 }

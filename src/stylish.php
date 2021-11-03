@@ -1,8 +1,8 @@
 <?php
 
-namespace formatter;
+namespace stylish;
 
-function formatter(array $value): string
+function stylish(array $value): string
 {
     $space = ' ';
     $spacesCount = 2;
@@ -14,11 +14,11 @@ function formatter(array $value): string
         $currentIndent = str_repeat($space, $indentSize);
         $bracketIndent = str_repeat($space, $indentSize - $spacesCount);
         $lines = array_map(
-            fn($key, $val) => "{$currentIndent}{$key}: {$iter($val, $depth + 4)}",
+            fn($key, $val) => "$currentIndent$key: {$iter($val, $depth + 2)}",
             array_keys($currentValue),
             $currentValue
         );
-        $result = ['{', ...$lines, "{$bracketIndent}}"];
+        $result = ['{', ...$lines, "$bracketIndent}"];
         return implode("\n", $result);
     };
     return $iter($value, 1);
