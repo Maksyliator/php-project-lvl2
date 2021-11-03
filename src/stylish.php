@@ -2,8 +2,6 @@
 
 namespace stylish;
 
-use phpDocumentor\Reflection\Types\Mixed_;
-
 function stylish(array $value): string
 {
     $space = ' ';
