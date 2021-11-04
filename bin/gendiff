@@ -23,21 +23,24 @@ DOC;
 
 $args = Docopt::handle($doc, ['help' => true, 'version' => 'Generate diff 1.0']);
 
-$file1 = $args['<firstFile>'];
-$file2 = $args['<secondFile>'];
-$extensionFirstFile = substr($file1, -4, 4);
-$extensionSecondFile = substr($file2, -4, 4);
-if ($extensionFirstFile === 'json') {
-    $file1Contents = file_get_contents(__DIR__ . '/../' . $file1, true);
-    $data1 = json_decode($file1Contents);
-} else {
-    $data1 = Yaml::parseFile(__DIR__ . '/../' . $file1, Yaml::PARSE_OBJECT_FOR_MAP);
-}
-if ($extensionSecondFile === 'json') {
-    $file2Contents = file_get_contents(__DIR__ . '/../' . $file2, true);
-    $data2 = json_decode($file2Contents);
-} else {
-    $data2 = Yaml::parseFile(__DIR__ . '/../' . $file2, Yaml::PARSE_OBJECT_FOR_MAP);
+$pathToFirstFile = $args['<firstFile>'];
+$pathToSecondFile = $args['<secondFile>'];
+$firstFileContent = file_get_contents(__DIR__ . '/../' . $pathToFirstFile, true);
+$secondFileContent = file_get_contents(__DIR__ . '/../' . $pathToSecondFile, true);
+$extensionFirstFile = pathinfo($pathToFirstFile, PATHINFO_EXTENSION);
+$extensionSecondFile = pathinfo($pathToSecondFile, PATHINFO_EXTENSION);
+
+function transformation($fileContent, $extension)
+{
+    switch ($extension) {
+        case 'json':
+            return json_decode($fileContent);
+        case 'yaml' || 'yml':
+            return Yaml::parse($fileContent, Yaml::PARSE_OBJECT_FOR_MAP);
+    }
 }
 
-print_r(genDiff($data1, $data2));
+$dataFirstFile = transformation($firstFileContent, $extensionFirstFile);
+$dataSecondFile = transformation($secondFileContent, $extensionSecondFile);
+
+print_r(genDiff($dataFirstFile, $dataSecondFile));
