@@ -15,3 +15,6 @@ test:
 
 test-coverage:
 	composer exec --verbose phpunit tests -- --coverage-text
+
+test-coverage2:
+	composer exec --verbose phpunit tests -- --coverage-clover build/logs/clover.xml
