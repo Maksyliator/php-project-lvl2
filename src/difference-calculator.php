@@ -4,7 +4,7 @@ namespace difference\calculator;
 
 use function stylish\stylish;
 
-function genDiff($data1, $data2)
+function genDiff($data1, $data2, $formatter = 'stylish')
 {
     $result = [];
     $data1 = (array) $data1;
@@ -39,5 +39,9 @@ function genDiff($data1, $data2)
             $result['+ ' . $key] = $data2[$key];
         }
     }
-    return stylish($result);
+
+    if ($formatter = 'stylish') {
+        return stylish($result);
+    }
+    return $result;
 }

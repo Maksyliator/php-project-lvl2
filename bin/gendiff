@@ -25,6 +25,7 @@ $args = Docopt::handle($doc, ['help' => true, 'version' => 'Generate diff 1.0'])
 
 $pathToFirstFile = $args['<firstFile>'];
 $pathToSecondFile = $args['<secondFile>'];
+$formatter = $args['--format'];
 $firstFileContent = file_get_contents(__DIR__ . '/../' . $pathToFirstFile, true);
 $secondFileContent = file_get_contents(__DIR__ . '/../' . $pathToSecondFile, true);
 $extensionFirstFile = pathinfo($pathToFirstFile, PATHINFO_EXTENSION);
@@ -43,4 +44,4 @@ function transformation($fileContent, $extension)
 $dataFirstFile = transformation($firstFileContent, $extensionFirstFile);
 $dataSecondFile = transformation($secondFileContent, $extensionSecondFile);
 
-print_r(genDiff($dataFirstFile, $dataSecondFile));
+print_r(genDiff($dataFirstFile, $dataSecondFile, $formatter));
