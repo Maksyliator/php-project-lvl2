@@ -7,5 +7,6 @@
       <option name="USE_INSTALLED_PATHS" value="true" />
       <option name="EXTENSIONS" value="php,js,css,inc" />
     </inspection_tool>
+    <inspection_tool class="PhpInconsistentReturnPointsInspection" enabled="false" level="WARNING" enabled_by_default="false" />
   </profile>
 </component>

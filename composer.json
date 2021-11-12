@@ -1,6 +1,8 @@
 {
     "name": "maksyliator/difcalc",
-    "bin": ["bin/gendiff"],
+    "bin": [
+        "bin/gendiff"
+    ],
     "type": "library",
     "authors": [
         {
@@ -8,12 +10,16 @@
             "email": "tankov.m83@gmail.com"
         }
     ],
-    "description": "Difference calculator",
+    "description": "Finding difference",
     "license": "MIT",
     "autoload": {
         "files" : [
-            "src/difference-calculator.php",
-            "src/stylish.php"
+            "src/Difference-calculator.php",
+            "src/Parsers.php",
+            "src/Formatters.php",
+            "src/Formatters/Stylish.php",
+            "src/Formatters/Plain.php",
+            "src/Formatters/Json.php"
             ],
         "psr-4": {
             "tests\\test\\": "tests"
