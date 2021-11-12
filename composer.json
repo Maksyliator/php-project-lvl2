@@ -1,5 +1,5 @@
 {
-    "name": "maksyliator/difcalc",
+    "name": "hexlet/codec",
     "bin": [
         "bin/gendiff"
     ],
