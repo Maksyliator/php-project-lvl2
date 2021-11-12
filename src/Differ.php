@@ -6,7 +6,7 @@ use function Differ\Parsers\convertingFile;
 use function Differ\Formatters\formatSelection;
 use function Functional\sort;
 
-function genDiff(string $pathToFirstFile, string $pathToSecondFile, $formatter): string
+function genDiff(string $pathToFirstFile, string $pathToSecondFile, string $formatter = 'stylish'): string
 {
     $firstFileContent = file_get_contents(__DIR__ . '/../' . $pathToFirstFile, true);
     $secondFileContent = file_get_contents(__DIR__ . '/../' . $pathToSecondFile, true);
