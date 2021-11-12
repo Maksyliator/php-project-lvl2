@@ -1,9 +1,9 @@
 <?php
 
-namespace Difference\Difference\Calculator;
+namespace Differ\Differ;
 
-use function Difference\Parsers\convertingFile;
-use function Difference\Formatters\formatSelection;
+use function Differ\Parsers\convertingFile;
+use function Differ\Formatters\formatSelection;
 use function Functional\sort;
 
 function genDiff(string $pathToFirstFile, string $pathToSecondFile, $formatter): string

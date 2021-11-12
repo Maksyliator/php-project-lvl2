@@ -1,6 +1,6 @@
 <?php
 
-namespace Difference\Formatters\Json;
+namespace Differ\Formatters\Json;
 
 function makeJsonFormat(array $astTree): string
 {

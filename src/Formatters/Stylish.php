@@ -1,6 +1,6 @@
 <?php
 
-namespace Difference\Formatters\Stylish;
+namespace Differ\Formatters\Stylish;
 
 const NUMBERINDENTS = 4;
 

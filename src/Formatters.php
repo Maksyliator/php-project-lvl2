@@ -1,10 +1,10 @@
 <?php
 
-namespace Difference\Formatters;
+namespace Differ\Formatters;
 
-use function Difference\Formatters\Stylish\makeStylishFormat;
-use function Difference\Formatters\Plain\makePlainFormat;
-use function Difference\Formatters\Json\makeJsonFormat;
+use function Differ\Formatters\Stylish\makeStylishFormat;
+use function Differ\Formatters\Plain\makePlainFormat;
+use function Differ\Formatters\Json\makeJsonFormat;
 
 function formatSelection(array $astTree, string $formatter = 'stylish'): string
 {

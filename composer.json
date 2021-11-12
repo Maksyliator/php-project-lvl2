@@ -14,7 +14,7 @@
     "license": "MIT",
     "autoload": {
         "files" : [
-            "src/Difference-calculator.php",
+            "src/Differ.php",
             "src/Parsers.php",
             "src/Formatters.php",
             "src/Formatters/Stylish.php",
