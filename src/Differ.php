@@ -8,8 +8,8 @@ use function Functional\sort;
 
 function genDiff(string $pathToFirstFile, string $pathToSecondFile, string $formatter = 'stylish'): string
 {
-    $firstFileContent = file_get_contents(__DIR__ . $pathToFirstFile, true);
-    $secondFileContent = file_get_contents(__DIR__ . '/../' . $pathToSecondFile, true);
+    $firstFileContent = file_get_contents($pathToFirstFile);
+    $secondFileContent = file_get_contents($pathToSecondFile);
     $extensionFirstFile = pathinfo($pathToFirstFile, PATHINFO_EXTENSION);
     $extensionSecondFile = pathinfo($pathToSecondFile, PATHINFO_EXTENSION);
     $dataFirstFile = convertingFile($firstFileContent, $extensionFirstFile);
