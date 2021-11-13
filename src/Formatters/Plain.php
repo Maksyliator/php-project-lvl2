@@ -34,12 +34,13 @@ function plain(array $tree, string $path): array
     }, $tree);
 }
 
-function stringify(array $value): string
+function stringify(array $dataValue): string
 {
-    if (is_object($value[0])) {
+    $value = $dataValue[0];
+    if (is_object($value)) {
         return "[complex value]";
-    } elseif ($value[0] === null) {
+    } elseif ($value === null) {
         return 'null';
     }
-    return var_export($value[0], true);
+    return var_export($value, true);
 }
