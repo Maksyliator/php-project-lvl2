@@ -15,5 +15,7 @@ function formatSelection(array $astTree, string $formatter): string
             return makePlainFormat($astTree);
         case 'json':
             return makeJsonFormat($astTree);
+        default:
+            throw new \Exception("Invalid formatter. The format should be 'stylish' , 'plain' or 'json'");
     }
 }
