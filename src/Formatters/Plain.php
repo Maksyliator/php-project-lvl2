@@ -16,11 +16,11 @@ function plain(array $tree, string $path): array
     return array_map(function ($node) use ($path) {
         switch ($node['type']) {
             case 'updated':
-                $data1Value = stringify($node['data1Value']);
-                $data2Value = stringify($node['data2Value']);
+                $data1Value = stringify([$node['data1Value']]);
+                $data2Value = stringify([$node['data2Value']]);
                 return "Property '$path{$node['key']}' was updated. From $data1Value to $data2Value";
             case 'added':
-                $value = stringify($node['data2Value']);
+                $value = stringify([$node['data2Value']]);
                 return "Property '$path{$node['key']}' was added with value: $value";
             case 'removed':
                 return "Property '$path{$node['key']}' was removed";
@@ -34,12 +34,12 @@ function plain(array $tree, string $path): array
     }, $tree);
 }
 
-function stringify($value): string
+function stringify(array $value): string
 {
-    if (is_object($value)) {
+    if (is_object($value[0])) {
         return "[complex value]";
-    } elseif ($value === null) {
+    } elseif ($value[0] === null) {
         return 'null';
     }
-    return var_export($value, true);
+    return var_export($value[0], true);
 }
