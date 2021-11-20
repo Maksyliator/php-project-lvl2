@@ -1,2 +1,12 @@
 /vendor/
 composer.lock
+/coverage/
+.idea
+logs
+*.swo
+*.swp
+*.cache
+*.xml
+/build/
+.phpunit.result.cache
+.codeclimate
