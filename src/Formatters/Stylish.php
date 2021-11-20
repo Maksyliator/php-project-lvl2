@@ -6,17 +6,17 @@ const NUMBERINDENTS = 4;
 
 function makeStylishFormat(array $astTree): string
 {
-    return stylish($astTree);
+    return render($astTree);
 }
 
-function stylish(array $astTree, int $depth = 0): string
+function render(array $astTree, int $depth = 0): string
 {
     $indent = buildIndent($depth, NUMBERINDENTS);
     $result = array_map(function ($node) use ($depth, $indent) {
         $deepening = $depth + 1;
         switch ($node['type']) {
             case 'parent':
-                return $indent . "    " . $node['key'] . ": " . stylish($node['children'], $deepening) . "\n";
+                return $indent . "    " . $node['key'] . ": " . render($node['children'], $deepening) . "\n";
             case 'added':
                 $valueAdded = stringify([$node['data2Value']], $deepening);
                 return $indent . "  + " . $node['key'] . ": " . $valueAdded . "\n";

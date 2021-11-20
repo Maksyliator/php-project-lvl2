@@ -6,12 +6,12 @@ use function Functional\flatten;
 
 function makePlainFormat(array $astTree): string
 {
-    $lines = plain($astTree, '');
+    $lines = render($astTree, '');
     $joinedLine = implode("\n", flatten($lines));
     return "$joinedLine";
 }
 
-function plain(array $tree, string $path): array
+function render(array $tree, string $path): array
 {
     return array_map(function ($node) use ($path) {
         switch ($node['type']) {
@@ -29,7 +29,7 @@ function plain(array $tree, string $path): array
             case 'parent':
                 $newPath = "$path{$node['key']}.";
                 $children = $node['children'];
-                return plain($children, $newPath);
+                return render($children, $newPath);
         }
     }, $tree);
 }
