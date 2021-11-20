@@ -16,7 +16,7 @@ class DifferenceTest extends TestCase
     /**
      * @dataProvider argumentProviderForFlatStructure
      * @dataProvider argumentProviderForTreeStructureStylishFormat
-     * @dataProvider argumentProviderForFlatStructure
+     * @dataProvider argumentProviderForTreeStructurePlainFormat
      * @dataProvider argumentProviderForTreeStructureJsonFormat
      */
     public function testGenDiff($firstPath, $secondPath, $expected, $style = 'stylish')
